@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CountdownModule } from 'ngx-countdown';
 import { DigitOnlyModule } from '@uiowa/digit-only';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -13,8 +12,7 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserModule,    
     FormsModule,
     ReactiveFormsModule,
     CountdownModule,
