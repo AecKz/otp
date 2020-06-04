@@ -4,51 +4,51 @@
   <div class="card-body">
     <form [formGroup]="otpForm" (ngSubmit)="onSubmit()"> 
       <img style="max-height: 80px;" class="img-responsive" src="./assets/SVG/icono.svg">  
-      <h3>Código de Validación</h3>
+      <h3>Código de validación</h3>
       <br>
       <span>Ingresa el código de 6 dígitos que hemos enviado a tu correo electrónico exxxxxiz@gmail.com y celular 09xxxxx651</span>
       <br>
       <div class="form-row">
         <div class="form-group col-1">
-          <input type="text"  digitOnly maxlength="1" formControlName="firstName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-            <div *ngIf="f.firstName.errors.required">Requerido</div>
+          <input type="password"  digitOnly maxlength="1" formControlName="firstSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstSquare.errors }" />
+          <div *ngIf="submitted && f.firstSquare.errors" class="invalid-feedback">
+            <div *ngIf="f.firstSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Requerido</div>
+          <input type="password" digitOnly maxlength="1" formControlName="secondSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.secondSquare.errors }" />
+          <div *ngIf="submitted && f.secondSquare.errors" class="invalid-feedback">
+            <div *ngIf="f.secondSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Requerido</div>
+          <input type="password" digitOnly maxlength="1" formControlName="thirdSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.thirdSquare.errors }" />
+          <div *ngIf="submitted && f.thirdSquare.errors" class="invalid-feedback">
+            <div *ngIf="f.thirdSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Requerido</div>
+          <input type="password" digitOnly maxlength="1" formControlName="fourthSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.fourthSquare.errors }" />
+          <div *ngIf="submitted && f.fourthSquare.errors" class="invalid-feedback">
+            <div *ngIf="f.fourthSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Requerido</div>
+          <input type="password" digitOnly maxlength="1" formControlName="fifthSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.fifthSquare.errors }" />
+          <div *ngIf="submitted && f.fifthSquare.errors" class="invalid-feedback">
+            <div *ngIf="f.fifthSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Requerido</div>
+          <input type="password" digitOnly maxlength="1" formControlName="sixthSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.sixthSquare.errors }" />
+          <div *ngIf="submitted && f.sixthSquare.errors" class="invalid-feedback">
+            <div *ngIf="f.sixthSquare.errors.required"></div>
           </div>
         </div>
       </div>      
@@ -58,8 +58,8 @@
         <button (click)="cd1.restart()" class="btn btn-link btn-sm">Reenviar código</button>            
       </div>
       <div class="text-center">
-        <button class="btn btn-primary mr-1">Cancelar</button>
-        <button class="btn btn-secondary" type="reset" (click)="onReset()">Continuar</button>
+        <button class="btn btn-secondary mr-1" type="reset" (click)="onReset()">Cancelar</button>
+        <button [disabled]="otpForm.invalid" class="btn btn-primary" >Continuar</button>
       </div>
     </form>
   </div>
