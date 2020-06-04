@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   otpForm: FormGroup;
   submitted = false;
   squareValue: String;
+  timerStatus: Number;
 
   constructor(private formBuilder: FormBuilder) { }
   ngOnInit() {
@@ -51,5 +52,12 @@ export class AppComponent implements OnInit {
       let newID = id + nexInput;
       document.getElementById(newID).focus();
     }
+  }
+
+  noTimeLeft(event){
+    this.timerStatus = event.status;
+    if(this.timerStatus === 3){
+      document.getElementById("continueBtn").setAttribute("disabled","true");
+    }    
   }
 }
