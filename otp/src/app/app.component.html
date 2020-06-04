@@ -10,52 +10,52 @@
       <br>
       <div class="form-row">
         <div class="form-group col-1">
-          <input type="text" formControlName="firstName" class="form-control"
+          <input type="text"  digitOnly maxlength="1" formControlName="firstName" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
           <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            <div *ngIf="f.firstName.errors.required">Requerido</div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" formControlName="lastName" class="form-control"
+          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
           <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            <div *ngIf="f.lastName.errors.required">Requerido</div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" formControlName="lastName" class="form-control"
+          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
           <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            <div *ngIf="f.lastName.errors.required">Requerido</div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" formControlName="lastName" class="form-control"
+          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
           <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            <div *ngIf="f.lastName.errors.required">Requerido</div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" formControlName="lastName" class="form-control"
+          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
           <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            <div *ngIf="f.lastName.errors.required">Requerido</div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="text" formControlName="lastName" class="form-control"
+          <input type="text" digitOnly maxlength="1" formControlName="lastName" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
           <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            <div *ngIf="f.lastName.errors.required">Requerido</div>
           </div>
         </div>
       </div>      
       <div class="form-group form-timer">
         <label for="acceptTerms" class="form-timer-label">El código expira en </label>   
-        <countdown [config]="{leftTime: 120}"></countdown>     
-        <a [routerLink]="" (click)="reenviarCodigo()" class="form-timer-codigo">Reenviar código</a>        
+        <countdown #cd1 [config]="{leftTime: 120}"></countdown> 
+        <button (click)="cd1.restart()" class="btn btn-link btn-sm">Reenviar código</button>            
       </div>
       <div class="text-center">
         <button class="btn btn-primary mr-1">Cancelar</button>
