@@ -10,43 +10,43 @@
       <br>
       <div class="form-row">
         <div class="form-group col-1">
-          <input type="password"  digitOnly maxlength="1" formControlName="firstSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.firstSquare.errors }" />
+          <input id="square1" type="password"  digitOnly maxlength="1" formControlName="firstSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstSquare.errors }"/>
           <div *ngIf="submitted && f.firstSquare.errors" class="invalid-feedback">
             <div *ngIf="f.firstSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="password" digitOnly maxlength="1" formControlName="secondSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.secondSquare.errors }" />
+          <input id="square2" type="password" digitOnly maxlength="1" formControlName="secondSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.secondSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',2)"/>
           <div *ngIf="submitted && f.secondSquare.errors" class="invalid-feedback">
             <div *ngIf="f.secondSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="password" digitOnly maxlength="1" formControlName="thirdSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.thirdSquare.errors }" />
+          <input id="square3" type="password" digitOnly maxlength="1" formControlName="thirdSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.thirdSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',3)"/>
           <div *ngIf="submitted && f.thirdSquare.errors" class="invalid-feedback">
             <div *ngIf="f.thirdSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="password" digitOnly maxlength="1" formControlName="fourthSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.fourthSquare.errors }" />
+          <input id="square4" type="password" digitOnly maxlength="1" formControlName="fourthSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.fourthSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',4)"/>
           <div *ngIf="submitted && f.fourthSquare.errors" class="invalid-feedback">
             <div *ngIf="f.fourthSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="password" digitOnly maxlength="1" formControlName="fifthSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.fifthSquare.errors }" />
+          <input id="square5" type="password" digitOnly maxlength="1" formControlName="fifthSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.fifthSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',5)"/>
           <div *ngIf="submitted && f.fifthSquare.errors" class="invalid-feedback">
             <div *ngIf="f.fifthSquare.errors.required"></div>
           </div>
         </div>
         <div class="form-group col-1">
-          <input type="password" digitOnly maxlength="1" formControlName="sixthSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.sixthSquare.errors }" />
+          <input id="square6" type="password" digitOnly maxlength="1" formControlName="sixthSquare" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.sixthSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',6)"/>
           <div *ngIf="submitted && f.sixthSquare.errors" class="invalid-feedback">
             <div *ngIf="f.sixthSquare.errors.required"></div>
           </div>

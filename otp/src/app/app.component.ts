@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'otp';
   otpForm: FormGroup;
   submitted = false;
+  squareValue: String;
 
   constructor(private formBuilder: FormBuilder) { }
   ngOnInit() {
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
       thirdSquare: ['', Validators.required],
       fourthSquare: ['', Validators.required],
       fifthSquare: ['', Validators.required],
-      sixthSquare: ['', Validators.required]      
+      sixthSquare: ['', Validators.required]
     });
   }
 
@@ -41,5 +42,14 @@ export class AppComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.otpForm.reset();
+  }
+
+  validateBackspace(event, id, nextInputIndex) {    
+    this.squareValue = event.target.value;    
+    if (this.squareValue === '') {      
+      let nexInput = +nextInputIndex - 1;
+      let newID = id + nexInput;
+      document.getElementById(newID).focus();
+    }
   }
 }
