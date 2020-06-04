@@ -48,4 +48,9 @@ onReset() {
     this.submitted = false;
     this.otpForm.reset();
 }
+
+reenviarCodigo(){
+  alert('Codigo Reenviado');
+}
+
 }

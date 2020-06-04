@@ -53,8 +53,9 @@
         </div>
       </div>      
       <div class="form-group form-timer">
-        <label for="acceptTerms" class="form-timer-label">El código expira en </label>        
-        <label class="form-timer-codigo">Reenviar código</label>        
+        <label for="acceptTerms" class="form-timer-label">El código expira en </label>   
+        <countdown [config]="{leftTime: 120}"></countdown>     
+        <a [routerLink]="" (click)="reenviarCodigo()" class="form-timer-codigo">Reenviar código</a>        
       </div>
       <div class="text-center">
         <button class="btn btn-primary mr-1">Cancelar</button>
