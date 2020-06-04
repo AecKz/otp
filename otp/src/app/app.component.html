@@ -3,12 +3,14 @@
   <br>
   <div class="card" style="width: 28rem;">
     <img style="max-height: 60px;" class="card-header img-responsive" src="./assets/SVG/MainPichincha.svg">
-    <div class="card-body text-center">
+    <div class="card-body">
       <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
         <img style="max-height: 80px;" class="img-responsive" src="./assets/SVG/icono.svg">
-        <h3>Código de validación</h3>
-        <p>Ingresa el código de 6 dígitos que hemos enviado a tu correo electrónico exxxxxiz@gmail.com y celular
-          09xxxxx651</p>        
+        <h3 style="text-align: center;">Código de validación</h3>
+        <br>
+        <p style="text-align: center;">Ingresa el código de 6 dígitos que hemos enviado a tu correo electrónico exxxxxiz@gmail.com y celular
+          09xxxxx651</p>      
+          <br>  
         <div class="form-row">
           <div class="form-group col-2">
             <input id="square1" type="password" digitOnly maxlength="1" formControlName="firstSquare"
@@ -67,13 +69,14 @@
             <button (click)="onReset(); cd1.restart()" type="reset" class="btn btn-link btn-sm">Reenviar código</button>
           </div>
         </div>
-
+        <br>
+        <br>
         <div class="row">
-          <div class="col-6">
+          <div class="col-6" style="text-align: left;">
             <button id="cancelBtn" class="btn btn-lg btn-secondary mr-1" type="reset"
               (click)="onReset(); cd1.restart()">Cancelar</button>
           </div>
-          <div class="col-6">
+          <div class="col-6" style="text-align: right;">
             <button id="continueBtn" [disabled]="otpForm.invalid || timerStatus===3"
               class="btn btn-primary btn-lg">Continuar</button>
           </div>
