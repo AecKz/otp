@@ -1,14 +1,14 @@
 <!-- main app container -->
-<div class="container container-fluid max-width-100">
-  <div class="card m-3">
+<div class="container container-fluid max-width-480">
+  <br>
+  <div class="card" style="width: 28rem;">
     <img style="max-height: 60px;" class="card-header img-responsive" src="./assets/SVG/MainPichincha.svg">
     <div class="card-body text-center">
       <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
         <img style="max-height: 80px;" class="img-responsive" src="./assets/SVG/icono.svg">
         <h3>Código de validación</h3>
         <p>Ingresa el código de 6 dígitos que hemos enviado a tu correo electrónico exxxxxiz@gmail.com y celular
-          09xxxxx651</p>
-        <br>
+          09xxxxx651</p>        
         <div class="form-row">
           <div class="form-group col-2">
             <input id="square1" type="password" digitOnly maxlength="1" formControlName="firstSquare"

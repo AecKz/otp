@@ -9,6 +9,11 @@ h3 {
     font-family: preloslab-book;
     color: #4A4A4A;
 }
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
 
 #continueBtn {
     background-color: #FD0;
