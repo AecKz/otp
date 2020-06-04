@@ -1,66 +1,85 @@
 <!-- main app container -->
-<div class="card m-3">  
-  <img style="max-height: 60px;" class="card-header img-responsive" src="./assets/SVG/MainPichincha.svg">  
-  <div class="card-body">
-    <form [formGroup]="otpForm" (ngSubmit)="onSubmit()"> 
-      <img style="max-height: 80px;" class="img-responsive" src="./assets/SVG/icono.svg">  
-      <h3>Código de validación</h3>
-      <br>
-      <span>Ingresa el código de 6 dígitos que hemos enviado a tu correo electrónico exxxxxiz@gmail.com y celular 09xxxxx651</span>
-      <br>
-      <div class="form-row">
-        <div class="form-group col-1">
-          <input id="square1" type="password"  digitOnly maxlength="1" formControlName="firstSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.firstSquare.errors }"/>
-          <div *ngIf="submitted && f.firstSquare.errors" class="invalid-feedback">
-            <div *ngIf="f.firstSquare.errors.required"></div>
+<div class="container container-fluid max-width-100">
+  <div class="card m-3">
+    <img style="max-height: 60px;" class="card-header img-responsive" src="./assets/SVG/MainPichincha.svg">
+    <div class="card-body text-center">
+      <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+        <img style="max-height: 80px;" class="img-responsive" src="./assets/SVG/icono.svg">
+        <h3>Código de validación</h3>
+        <p>Ingresa el código de 6 dígitos que hemos enviado a tu correo electrónico exxxxxiz@gmail.com y celular
+          09xxxxx651</p>
+        <br>
+        <div class="form-row">
+          <div class="form-group col-2">
+            <input id="square1" type="password" digitOnly maxlength="1" formControlName="firstSquare"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstSquare.errors }" />
+            <div *ngIf="submitted && f.firstSquare.errors" class="invalid-feedback">
+              <div *ngIf="f.firstSquare.errors.required"></div>
+            </div>
+          </div>
+          <div class="form-group col-2">
+            <input id="square2" type="password" digitOnly maxlength="1" formControlName="secondSquare"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.secondSquare.errors }"
+              (keydown.backspace)="validateBackspace($event,'square',2)" />
+            <div *ngIf="submitted && f.secondSquare.errors" class="invalid-feedback">
+              <div *ngIf="f.secondSquare.errors.required"></div>
+            </div>
+          </div>
+          <div class="form-group col-2">
+            <input id="square3" type="password" digitOnly maxlength="1" formControlName="thirdSquare"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.thirdSquare.errors }"
+              (keydown.backspace)="validateBackspace($event,'square',3)" />
+            <div *ngIf="submitted && f.thirdSquare.errors" class="invalid-feedback">
+              <div *ngIf="f.thirdSquare.errors.required"></div>
+            </div>
+          </div>
+          <div class="form-group col-2">
+            <input id="square4" type="password" digitOnly maxlength="1" formControlName="fourthSquare"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fourthSquare.errors }"
+              (keydown.backspace)="validateBackspace($event,'square',4)" />
+            <div *ngIf="submitted && f.fourthSquare.errors" class="invalid-feedback">
+              <div *ngIf="f.fourthSquare.errors.required"></div>
+            </div>
+          </div>
+          <div class="form-group col-2">
+            <input id="square5" type="password" digitOnly maxlength="1" formControlName="fifthSquare"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fifthSquare.errors }"
+              (keydown.backspace)="validateBackspace($event,'square',5)" />
+            <div *ngIf="submitted && f.fifthSquare.errors" class="invalid-feedback">
+              <div *ngIf="f.fifthSquare.errors.required"></div>
+            </div>
+          </div>
+          <div class="form-group col-2">
+            <input id="square6" type="password" digitOnly maxlength="1" formControlName="sixthSquare"
+              class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sixthSquare.errors }"
+              (keydown.backspace)="validateBackspace($event,'square',6)" />
+            <div *ngIf="submitted && f.sixthSquare.errors" class="invalid-feedback">
+              <div *ngIf="f.sixthSquare.errors.required"></div>
+            </div>
           </div>
         </div>
-        <div class="form-group col-1">
-          <input id="square2" type="password" digitOnly maxlength="1" formControlName="secondSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.secondSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',2)"/>
-          <div *ngIf="submitted && f.secondSquare.errors" class="invalid-feedback">
-            <div *ngIf="f.secondSquare.errors.required"></div>
+        <div class="form-group form-timer form-row">
+          <div class="col-6" style="text-align: left;">
+            <label class="form-timer-label mr-1">El código expira en </label>
+            <countdown #cd1 [config]="{leftTime: 120, format: 'mm:ss'}" (event)="noTimeLeft($event)"></countdown>
+          </div>
+          <div class="col-6" style="text-align: right;">
+            <button (click)="onReset(); cd1.restart()" type="reset" class="btn btn-link btn-sm">Reenviar código</button>
           </div>
         </div>
-        <div class="form-group col-1">
-          <input id="square3" type="password" digitOnly maxlength="1" formControlName="thirdSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.thirdSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',3)"/>
-          <div *ngIf="submitted && f.thirdSquare.errors" class="invalid-feedback">
-            <div *ngIf="f.thirdSquare.errors.required"></div>
+
+        <div class="row">
+          <div class="col-6">
+            <button id="cancelBtn" class="btn btn-lg btn-secondary mr-1" type="reset"
+              (click)="onReset(); cd1.restart()">Cancelar</button>
+          </div>
+          <div class="col-6">
+            <button id="continueBtn" [disabled]="otpForm.invalid || timerStatus===3"
+              class="btn btn-primary btn-lg">Continuar</button>
           </div>
         </div>
-        <div class="form-group col-1">
-          <input id="square4" type="password" digitOnly maxlength="1" formControlName="fourthSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.fourthSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',4)"/>
-          <div *ngIf="submitted && f.fourthSquare.errors" class="invalid-feedback">
-            <div *ngIf="f.fourthSquare.errors.required"></div>
-          </div>
-        </div>
-        <div class="form-group col-1">
-          <input id="square5" type="password" digitOnly maxlength="1" formControlName="fifthSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.fifthSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',5)"/>
-          <div *ngIf="submitted && f.fifthSquare.errors" class="invalid-feedback">
-            <div *ngIf="f.fifthSquare.errors.required"></div>
-          </div>
-        </div>
-        <div class="form-group col-1">
-          <input id="square6" type="password" digitOnly maxlength="1" formControlName="sixthSquare" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.sixthSquare.errors }" (keydown.backspace)="validateBackspace($event,'square',6)"/>
-          <div *ngIf="submitted && f.sixthSquare.errors" class="invalid-feedback">
-            <div *ngIf="f.sixthSquare.errors.required"></div>
-          </div>
-        </div>
-      </div>      
-      <div class="form-group form-timer">
-        <label for="acceptTerms" class="form-timer-label">El código expira en </label>   
-        <countdown #cd1 [config]="{leftTime: 120, format: 'mm:ss'}" (event)="noTimeLeft($event)"></countdown> 
-        <button (click)="onReset(); cd1.restart()" class="btn btn-link btn-sm">Reenviar código</button>            
-      </div>
-      <div class="text-center">
-        <button class="btn btn-secondary mr-1" type="reset" (click)="onReset(); cd1.restart()">Cancelar</button>
-        <button id="continueBtn" [disabled]="otpForm.invalid || timerStatus===3" class="btn btn-primary" >Continuar</button>
-      </div>
-    </form>
+
+      </form>
+    </div>
   </div>
 </div>

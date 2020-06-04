@@ -1,0 +1,43 @@
+h3 {
+    color: #1B2D54;
+    font-family: PreloSlab-Bold;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+.form-group form-timer{
+    font-family: preloslab-book;
+    color: #4A4A4A;
+}
+
+#continueBtn {
+    background-color: #FD0;
+    border: 0;
+    color: #0F265C;
+    border-radius: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Prelo-SemiBold;
+    font-size: 14px;
+    min-height: 40px;
+    min-width: 120px;
+    background-repeat: no-repeat;
+    height: 47px;
+    margin-left: -6px;
+}
+
+#cancelBtn{
+    background-color: #e8ebf2;
+    border: 0;
+    color: #0F265C;
+    border-radius: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Prelo-SemiBold;
+    font-size: 14px;
+    min-height: 40px;
+    min-width: 120px;
+    background-repeat: no-repeat;
+    height: 47px;
+    margin-left: -6px;
+}
