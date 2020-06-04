@@ -10,9 +10,24 @@ h3 {
     color: #4A4A4A;
 }
 .card {
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+.form-control{
+    text-align: center;
+    font-size: 40px;
+    height: 60px;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545; 
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    background-image:none;
+    padding-right: calc(1em + .25rem); 
 }
 
 #continueBtn {
